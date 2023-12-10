@@ -1,7 +1,13 @@
+const BRAND_NAME = "Express Kinetic";
+const EMAIL_ADRRESS = "expresskinetic@gmail.com";
+const FACEBOOK_LINK = "https://www.facebook.com";
+const INSTAGRAM_LINK = "https://www.instagram.com";
+const PHONE_NUMBER = "+40 784 631 985";
+
 export type TLinkData = { link: string; label: string };
 
 export const navData: TLinkData[] = [
-    { link: "#acasa", label: "Express Kinetic" },
+    { link: "#acasa", label: BRAND_NAME },
     { link: "#servicii", label: "Servicii" },
     { link: "#testimoniale", label: "Testimoniale" },
     { link: "#contact", label: "Contact" },
@@ -18,10 +24,10 @@ export const heroSectionData: THeroSectionData = {
     title: "Terapie pentru copii",
     description: `Transformăm mișcarea într-o aventură plină de zâmbete și realizări! Suntem aici pentru a sprijini
     fiecare micuț în călătoria sa unică către dezvoltarea fizică și emoțională.`,
-    mainAction: { link: "contact", label: "Hai să vorbim" },
+    mainAction: { link: "#contact", label: "Hai să vorbim" },
     otherActions: [
-        { link: "#acasa", label: "Express Kinetic" },
-        { link: "#acasa", label: "Express Kinetic" },
+        { link: FACEBOOK_LINK, label: "Facebook" },
+        { link: INSTAGRAM_LINK, label: "Instagram" },
     ],
 };
 
@@ -95,7 +101,7 @@ export const testimonialSectionData: TTestimonialsSectionData = {
         },
         {
             name: "Iulia I",
-            testimonial: `Echipa Express Kineto este minunată și abordarea individualizată a făcut o diferență uriașă
+            testimonial: `Echipa ${BRAND_NAME} este minunată și abordarea individualizată a făcut o diferență uriașă
         pentru copilul meu. Am observat progrese semnificative și îl văd pe micuțul meu câștigând
         încredere în fiecare zi. Recomand cu căldură!`,
         },
@@ -149,8 +155,8 @@ export const contactSectionData: TContactSectionData = {
             title: "Adresa",
             link: { link: "https://maps.app.goo.gl/gtcYQG9j52rZAaST7", label: "Iași, Bulevardul Nicolae Iorga nr. 31" },
         },
-        { title: "Email", link: { link: "mailto:expresskinetic@gmail.com", label: "expresskinetic@gmail.com " } },
-        { title: "Telefon", link: { link: "tel:40784631985", label: "+40 784 631 985" } },
+        { title: "Email", link: { link: `mailto:${EMAIL_ADRRESS}`, label: EMAIL_ADRRESS } },
+        { title: "Telefon", link: { link: `tel:${PHONE_NUMBER}`, label: PHONE_NUMBER } },
     ],
     contactForm: {
         name: { label: "Nume*", type: "text" },
