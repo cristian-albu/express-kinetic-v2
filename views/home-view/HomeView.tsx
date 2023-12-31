@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { THeroSectionData, TServicesSectionData, TTestimonialsSectionData, TContactSectionData } from "@/data/data";
-import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactSection from "@/components/ContactSection";
+import HeroSection from "@/sections/hero-section/HeroSection";
+import ServicesSection from "@/sections/services-section/ServicesSection";
+import TestimonialsSection from "@/sections/testimonials-section/TestimonialsSection";
+import ContactSection from "@/sections/contact-section/ContactSection";
 
 export type THomeViewData = {
     heroData: THeroSectionData;

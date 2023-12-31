@@ -19,12 +19,15 @@ const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, conta
             throw new Error("Something went wrong");
         }
 
-        const formData = Array.from(ref.current.elements).reduce((acc: Record<string, string | boolean>, curr: Element) => {
-            if (curr instanceof HTMLInputElement || curr instanceof HTMLTextAreaElement) {
-                acc[curr.id] = curr instanceof HTMLInputElement && curr.type === "checkbox" ? curr.checked : curr.value;
-            }
-            return acc;
-        }, {});
+        const formData: Record<string, string | boolean> = Array.from(ref.current.elements).reduce(
+            (acc: Record<string, string | boolean>, curr: Element) => {
+                if (curr instanceof HTMLInputElement || curr instanceof HTMLTextAreaElement) {
+                    acc[curr.id] = curr instanceof HTMLInputElement && curr.type === "checkbox" ? curr.checked : curr.value;
+                }
+                return acc;
+            },
+            {}
+        );
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
