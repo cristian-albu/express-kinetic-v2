@@ -2,12 +2,43 @@
 import { THeroSectionData } from "@/data/data";
 import { CONTAINER_WIDTH } from "@/shared/constants";
 import React from "react";
+import styled from "styled-components";
+
+const HeroSec = styled.section`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-top: 8rem;
+    position: relative;
+`;
+
+const Rainbow = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    aspect-ratio: 1/1;
+    background: radial-gradient(
+        circle,
+        transparent 0%,
+        transparent 17%,
+        red 17%,
+        red 33%,
+        purple 33%,
+        purple 67%,
+        transparent 67%,
+        transparent 100%
+    );
+    filter: blur(4px);
+`;
 
 const HeroSection: React.FC<THeroSectionData> = ({ title, description, mainAction, otherActions }) => {
     return (
         <>
-            <section className={"heroSection"}>
-                <div className={"rainbow"} />
+            <HeroSec>
+                <Rainbow className={"rainbow"} />
                 <div className={"clouds"} />
 
                 <div className={"heroWrapper"}>
@@ -35,7 +66,7 @@ const HeroSection: React.FC<THeroSectionData> = ({ title, description, mainActio
                         </div>
                     </div>
                 </div>
-            </section>
+            </HeroSec>
 
             <style jsx>{`
                 .heroSection {
