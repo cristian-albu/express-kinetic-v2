@@ -5,7 +5,7 @@ import HomeView, { THomeViewData } from "@/views/home-view/HomeView";
 import { Entry } from "contentful";
 import React from "react";
 
-export const getPosts = async (): Promise<Entry<any>[]> => {
+const getPosts = async (): Promise<Entry<any>[]> => {
     try {
         const res = await client.getEntries({
             content_type: "blogPost",
