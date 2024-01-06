@@ -1,19 +1,9 @@
 "use client";
-import { ContactContainer, ContactSec, Hills, Tree } from "@/sections/contact-section/styled";
+
 import Link from "next/link";
 import React from "react";
-import styled from "styled-components";
-
-const ThankYouSection = styled(ContactSec)`
-    min-height: 100vh;
-`;
-
-const ThankYouContainer = styled(ContactContainer)`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`;
+import { ThankYouContainer, ThankYouSection } from "./styled";
+import { Hills, Tree } from "@/sections/contact-section/styled";
 
 const ThankYouView = () => {
     return (
