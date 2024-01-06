@@ -7,10 +7,10 @@ const PHONE_NUMBER = "+40 784 631 985";
 export type TLinkData = { link: string; label: string };
 
 export const navData: TLinkData[] = [
-    { link: "#acasa", label: BRAND_NAME },
-    { link: "#servicii", label: "Servicii" },
-    { link: "#testimoniale", label: "Testimoniale" },
-    { link: "#contact", label: "Contact" },
+    { link: "acasa", label: BRAND_NAME },
+    { link: "servicii", label: "Servicii" },
+    { link: "testimoniale", label: "Testimoniale" },
+    { link: "contact", label: "Contact" },
 ];
 
 export type THeroSectionData = {
@@ -91,6 +91,16 @@ export const testimonialSectionData: TTestimonialsSectionData = {
     description: "",
     testimonials: [
         {
+            name: "Daniela P",
+            testimonial: ` Când am adus pentru prima dată aici pe micuțul nostru, eram plini de îngrijorare și
+        incertitudine. El avea dificultăți în mișcare și în comunicare, și nu știam cum să-l ajutăm
+        mai bine. Astăzi, copilul nostru este un copil fericit, mai încrezător și mai independent. Nu
+        putem să ne exprimăm suficient de recunoștința față de acest serviciu de kinetoterapie și de
+        echipa sa minunată. Recomandăm cu căldură acest loc tuturor părinților care au copii cu nevoi
+        speciale. Este locul unde minuni devin realitate!`,
+        },
+
+        {
             name: "Maria C",
             testimonial: `Va mulțumim! Am plecat cu lacrimi in ochi așa de mult m-am emoționat. Am interacționat cu
     multi terapeuți din diferite orașe (Cluj, Bacău, Iași) și am avut experiențe frumoase, oameni
@@ -104,15 +114,6 @@ export const testimonialSectionData: TTestimonialsSectionData = {
             testimonial: `Echipa ${BRAND_NAME} este minunată și abordarea individualizată a făcut o diferență uriașă
         pentru copilul meu. Am observat progrese semnificative și îl văd pe micuțul meu câștigând
         încredere în fiecare zi. Recomand cu căldură!`,
-        },
-        {
-            name: "Daniela P",
-            testimonial: ` Când am adus pentru prima dată aici pe micuțul nostru, eram plini de îngrijorare și
-        incertitudine. El avea dificultăți în mișcare și în comunicare, și nu știam cum să-l ajutăm
-        mai bine. Astăzi, copilul nostru este un copil fericit, mai încrezător și mai independent. Nu
-        putem să ne exprimăm suficient de recunoștința față de acest serviciu de kinetoterapie și de
-        echipa sa minunată. Recomandăm cu căldură acest loc tuturor părinților care au copii cu nevoi
-        speciale. Este locul unde minuni devin realitate!`,
         },
     ],
 };

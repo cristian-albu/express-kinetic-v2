@@ -1,7 +1,8 @@
 "use client";
-import { TContactSectionData } from "@/data/data";
+import { TContactSectionData, navData } from "@/data/data";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useRef, useState } from "react";
+import { ContactContainer, ContactDetails, ContactForm, ContactLabel, ContactSec, Hills, Tree } from "./styled";
 
 const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, contactDetails, contactForm }) => {
     const { name, email, phone, message, checkbox, btnText } = contactForm;
@@ -29,6 +30,11 @@ const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, conta
             {}
         );
 
+        if (Object.values(formData).some((e) => e === "" || e === false)) {
+            setErrorState("Vă rugăm completați toate câmpurile");
+            return;
+        }
+
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
@@ -51,48 +57,59 @@ const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, conta
         }
     };
     return (
-        <section>
-            <div>
-                <h2>{title}</h2>
-                <p>{cta}</p>
-            </div>
+        <ContactSec id={navData[3].link}>
+            <ContactContainer>
+                <ContactDetails>
+                    <h2>{title}</h2>
+                    <p>{cta}</p>
 
-            <div>
-                {contactDetails.map((e) => {
-                    const externalLink = e.link.link.startsWith("http");
-                    return (
-                        <span key={e.title}>
-                            {e.title}:
-                            <a
-                                href={e.link.link}
-                                rel={externalLink ? "noreferrer noopener" : undefined}
-                                target={externalLink ? "_blank" : undefined}
-                            >
-                                {e.link.label}
-                            </a>
-                        </span>
-                    );
-                })}
-                <form action="" onSubmit={handleSubmit} ref={ref}>
-                    <p>{cta2}</p>
-                    {formInputs.map(({ type, label }) => {
+                    {contactDetails.map((e) => {
+                        const externalLink = e.link.link.startsWith("http");
                         return (
-                            <label key={label}>
-                                <p>{label}</p>
-                                {type === "textarea" ? (
-                                    <textarea id={label} name={label} />
-                                ) : (
-                                    <input id={label} name={label} type={type} />
-                                )}
-                            </label>
+                            <span key={e.title}>
+                                {e.title}:
+                                <a
+                                    href={e.link.link}
+                                    rel={externalLink ? "noreferrer noopener" : undefined}
+                                    target={externalLink ? "_blank" : undefined}
+                                >
+                                    {e.link.label}
+                                </a>
+                            </span>
                         );
                     })}
+                </ContactDetails>
+
+                <ContactForm action="" onSubmit={handleSubmit} ref={ref}>
+                    <p>{cta2}</p>
+                    {formInputs.map(({ type, label }) => (
+                        <ContactLabel key={label} $checkbox={type === "checkbox" ? true : false}>
+                            <p>{label}</p>
+                            {type === "textarea" ? (
+                                <textarea id={label} name={label} />
+                            ) : (
+                                <input id={label} name={label} type={type} />
+                            )}
+                        </ContactLabel>
+                    ))}
                     {}
 
-                    <button type="submit">{btnText}</button>
-                </form>
-            </div>
-        </section>
+                    <button type="submit">✉️{btnText}</button>
+                </ContactForm>
+            </ContactContainer>
+            <Hills>
+                <div>
+                    <Tree $bottom={40} $left={25} $sizeRatio={0.7} />
+                    <Tree $bottom={90} $left={90} $sizeRatio={1} />
+                </div>
+                <div>
+                    <Tree $bottom={90} $left={8} $sizeRatio={1.5} />
+                </div>
+                <div>
+                    <Tree $bottom={90} $left={80} $sizeRatio={2} />
+                </div>
+            </Hills>
+        </ContactSec>
     );
 };
 

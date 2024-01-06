@@ -26,9 +26,8 @@ const HomePage = async () => {
         contactData: contactSectionData,
     };
 
-    const posts = await getPosts();
+    // const posts = await getPosts();
 
-    console.log(posts);
     return <HomeView {...data} />;
 };
 

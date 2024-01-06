@@ -1,26 +1,27 @@
 "use client";
-import { TTestimonialsSectionData } from "@/data/data";
+import { TTestimonialsSectionData, navData } from "@/data/data";
 import React from "react";
+import { TestimonialCard, TestimonialContainer, TestimonialContent, TestimonialHeader, TestimonialSec } from "./styled";
 
 const TestimonialsSection: React.FC<TTestimonialsSectionData> = ({ title, description, testimonials }) => {
     return (
-        <section>
-            <div>
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </div>
+        <TestimonialSec id={navData[2].link}>
+            <TestimonialContainer>
+                <TestimonialHeader>
+                    <h2>{title}</h2>
+                    <p>{description}</p>
+                </TestimonialHeader>
 
-            <div>
-                {testimonials.map((e) => {
-                    return (
-                        <div key={e.name}>
-                            <h3>{e.name}</h3>
-                            <p>{e.testimonial}</p>
-                        </div>
-                    );
-                })}
-            </div>
-        </section>
+                <TestimonialContent>
+                    {testimonials.map((e) => (
+                        <TestimonialCard key={e.name}>
+                            <h3>{e.name}.</h3>
+                            <p>"{e.testimonial}"</p>
+                        </TestimonialCard>
+                    ))}
+                </TestimonialContent>
+            </TestimonialContainer>
+        </TestimonialSec>
     );
 };
 
