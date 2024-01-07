@@ -1,13 +1,14 @@
 "use client";
 import { navData } from "@/data/data";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
 
 export const NavBar = styled.nav`
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     position: fixed;
     top: 0;
     left: 0;
@@ -22,6 +23,13 @@ export const NavBar = styled.nav`
     & > :first-child {
         margin-right: auto;
     }
+
+    & > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
 `;
 
 const Nav = () => {
@@ -30,9 +38,10 @@ const Nav = () => {
     console.log(route);
     return (
         <NavBar>
-            {navData.map((e) =>
+            {navData.map((e, index) =>
                 route === "/" ? (
                     <a href={`#${e.link}`} key={e.label}>
+                        {index === 0 && <Image src={"/logo_express_kinetic.svg"} width={25} height={25} alt="logo" />}
                         {e.label}
                     </a>
                 ) : (
