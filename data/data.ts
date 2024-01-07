@@ -1,6 +1,6 @@
 export const BRAND_NAME = "Express Kinetic";
 export const EMAIL_ADRRESS = "office.expresskinetic@gmail.com";
-export const FACEBOOK_LINK = "https://www.facebook.com";
+export const FACEBOOK_LINK = "https://www.facebook.com/expresskinetic/";
 export const INSTAGRAM_LINK = "https://www.instagram.com";
 export const PHONE_NUMBER = "+40 784 631 985";
 
