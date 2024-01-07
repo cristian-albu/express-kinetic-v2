@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
+import { COLORS } from "../constants";
 
 export const NavBar = styled.nav`
     background-color: white;
@@ -19,6 +20,7 @@ export const NavBar = styled.nav`
     gap: 1.5rem;
     align-items: center;
     padding: 0.5rem 2rem;
+    border-bottom: 2px solid ${COLORS.sky2};
 
     & > :first-child {
         margin-right: auto;
