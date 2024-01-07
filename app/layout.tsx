@@ -3,6 +3,7 @@ import { Merriweather } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/registry";
 import Nav from "@/shared/nav/Nav";
+import Footer from "@/shared/footer/Footer";
 
 const merriweather = Merriweather({ weight: ["400", "700"], subsets: ["latin-ext"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <>
                         <Nav />
                         {children}
+                        <Footer />
                     </>
                 </StyledComponentsRegistry>
             </body>

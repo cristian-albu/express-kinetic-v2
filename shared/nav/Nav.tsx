@@ -31,7 +31,15 @@ const Nav = () => {
     return (
         <NavBar>
             {navData.map((e) =>
-                route === "/" ? <a href={`#${e.link}`}>{e.label}</a> : <Link href={`/#${e.link}`}>{e.label}</Link>
+                route === "/" ? (
+                    <a href={`#${e.link}`} key={e.label}>
+                        {e.label}
+                    </a>
+                ) : (
+                    <Link href={`/#${e.link}`} key={e.label}>
+                        {e.label}
+                    </Link>
+                )
             )}
         </NavBar>
     );

@@ -2,7 +2,16 @@
 import { TContactSectionData, navData } from "@/data/data";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useRef, useState } from "react";
-import { ContactContainer, ContactDetails, ContactForm, ContactLabel, ContactSec, Hills, Tree } from "./styled";
+import {
+    ContactContainer,
+    ContactDetails,
+    ContactForm,
+    ContactLabel,
+    ContactSec,
+    ErrorMessage,
+    Hills,
+    Tree,
+} from "./styled";
 
 const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, contactDetails, contactForm }) => {
     const { name, email, phone, message, checkbox, btnText } = contactForm;
@@ -84,7 +93,9 @@ const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, conta
                     <p>{cta2}</p>
                     {formInputs.map(({ type, label }) => (
                         <ContactLabel key={label} $checkbox={type === "checkbox" ? true : false}>
+                            {type === "checkbox" && <a href="#pdc">👉</a>}
                             <p>{label}</p>
+
                             {type === "textarea" ? (
                                 <textarea id={label} name={label} />
                             ) : (
@@ -95,6 +106,12 @@ const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, conta
                     {}
 
                     <button type="submit">✉️{btnText}</button>
+                    {errorState && (
+                        <ErrorMessage>
+                            {"🚩"}
+                            {errorState}
+                        </ErrorMessage>
+                    )}
                 </ContactForm>
             </ContactContainer>
             <Hills>

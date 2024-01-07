@@ -1,8 +1,8 @@
-const BRAND_NAME = "Express Kinetic";
-const EMAIL_ADRRESS = "expresskinetic@gmail.com";
-const FACEBOOK_LINK = "https://www.facebook.com";
-const INSTAGRAM_LINK = "https://www.instagram.com";
-const PHONE_NUMBER = "+40 784 631 985";
+export const BRAND_NAME = "Express Kinetic";
+export const EMAIL_ADRRESS = "expresskinetic@gmail.com";
+export const FACEBOOK_LINK = "https://www.facebook.com";
+export const INSTAGRAM_LINK = "https://www.instagram.com";
+export const PHONE_NUMBER = "+40 784 631 985";
 
 export type TLinkData = { link: string; label: string };
 

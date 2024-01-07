@@ -86,7 +86,8 @@ export const ContactForm = styled.form`
     background-color: white;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 2rem 2rem 2rem 0.2rem ${COLORS.sky2};
+    box-shadow: 2rem 2rem 2rem 0.2rem ${COLORS.sky2}22;
+    position: relative;
 
     & > button {
         width: 100%;
@@ -172,4 +173,16 @@ export const Hills = styled.div`
             border-bottom-color: ${COLORS.hills3};
         }
     }
+`;
+
+export const ErrorMessage = styled.div`
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    right: 0;
+    z-index: 999;
+    background-color: #959595;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
 `;
