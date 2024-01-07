@@ -76,7 +76,7 @@ const ContactSection: React.FC<TContactSectionData> = ({ title, cta, cta2, conta
                         const externalLink = e.link.link.startsWith("http");
                         return (
                             <span key={e.title}>
-                                {e.title}:
+                                {e.title}:{" "}
                                 <a
                                     href={e.link.link}
                                     rel={externalLink ? "noreferrer noopener" : undefined}

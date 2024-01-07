@@ -42,6 +42,11 @@ export const ContactDetails = styled.div`
     gap: 1rem;
     align-items: flex-start;
     justify-content: center;
+    font-size: 0.9rem;
+
+    & a {
+        text-decoration: underline;
+    }
 `;
 
 export const ContactLabel = styled.label<{ $checkbox?: boolean }>`

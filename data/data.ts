@@ -153,11 +153,11 @@ export const contactSectionData: TContactSectionData = {
     cta2: `Așa că, hai să ne jucăm și să ne simțim mai bine împreună!`,
     contactDetails: [
         {
-            title: "Adresa",
+            title: "🏠 Adresa",
             link: { link: "https://maps.app.goo.gl/gtcYQG9j52rZAaST7", label: "Iași, Bulevardul Nicolae Iorga nr. 31" },
         },
-        { title: "Email", link: { link: `mailto:${EMAIL_ADRRESS}`, label: EMAIL_ADRRESS } },
-        { title: "Telefon", link: { link: `tel:${PHONE_NUMBER}`, label: PHONE_NUMBER } },
+        { title: "✉️ Email", link: { link: `mailto:${EMAIL_ADRRESS}`, label: EMAIL_ADRRESS } },
+        { title: "📞 Telefon", link: { link: `tel:${PHONE_NUMBER}`, label: PHONE_NUMBER } },
     ],
     contactForm: {
         name: { label: "Nume*", type: "text" },
