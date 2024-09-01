@@ -1,12 +1,22 @@
 "use client";
 import { experienceData } from "@/data/experience";
 import { ServicesCard } from "@/sections/services-section/styled";
-import { COLORS } from "@/shared/constants";
+import { BREAKPOINTS, COLORS } from "@/shared/constants";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ExperienceContainer, ExperienceHeader, ExperienceSection, ExperienceTitle } from "./styled";
 
 const ExperienceView = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <ExperienceSection>
       <ExperienceHeader>
@@ -19,7 +29,7 @@ const ExperienceView = () => {
           width={300}
           height={300}
           alt=""
-          style={{ borderRadius: "1rem", boxShadow: `2rem 2rem 2rem 0.2rem ${COLORS.sky2}45` }}
+          style={{ borderRadius: "1rem", boxShadow: `2rem 2rem 2rem 0.2rem ${COLORS.sky2}45`, margin: "0.5rem 0rem" }}
         />
       </ExperienceHeader>
 
@@ -27,7 +37,10 @@ const ExperienceView = () => {
         {experienceData.certificates.map((e, index) => {
           const mainXp = index === 0 || index === 1;
           return (
-            <ServicesCard key={index.toString()} style={{ gridColumn: mainXp ? "span 2" : " span 1" }}>
+            <ServicesCard
+              key={index.toString()}
+              style={{ gridColumn: mainXp && width >= BREAKPOINTS.tablet ? "span 2" : "span 1" }}
+            >
               <p style={{ fontSize: mainXp ? "1.5rem" : "1rem" }}>
                 {mainXp ? "🎓 " : "📃 "}
                 {e.title}

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
-import { COLORS } from "../constants";
+import { BREAKPOINTS, COLORS } from "../constants";
 
 export const NavBar = styled.nav`
   background-color: white;
@@ -14,6 +14,7 @@ export const NavBar = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100%;
   z-index: 99;
   display: flex;
   justify-content: flex-start;
@@ -31,6 +32,15 @@ export const NavBar = styled.nav`
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    & > a {
+      font-size: 0.9rem;
+    }
   }
 `;
 

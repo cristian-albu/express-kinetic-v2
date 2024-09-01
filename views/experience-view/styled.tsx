@@ -8,6 +8,10 @@ export const ExperienceSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 5rem 4rem;
+
+  @media (max-width: ${BREAKPOINTS.tablet}px) {
+    padding: 5rem 1rem;
+  }
 `;
 
 export const ExperienceHeader = styled.div`
