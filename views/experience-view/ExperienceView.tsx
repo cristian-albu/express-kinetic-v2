@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { ExperienceContainer, ExperienceHeader, ExperienceSection, ExperienceTitle } from "./styled";
 
 const ExperienceView = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(500);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
